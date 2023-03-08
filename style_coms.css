@@ -1,0 +1,144 @@
+.main
+{
+    background-color: blue;
+}
+.commentbox
+{
+    margin: 10px;
+    
+
+    /* border: solid red 1px; */
+}
+.post
+{
+margin: 10px;
+}
+
+
+.contentpost
+{
+    padding:20px;
+    background-color: rgb(255, 255, 255);
+    border: solid rgb(224, 224, 224) 1px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.06);
+
+}
+.content
+{
+    padding:20px;
+    background-color: rgb(255, 255, 255);
+    border: solid rgb(224, 224, 224) 1px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.06);
+    padding:10px;
+
+}
+.heading
+{
+    display:flex;
+    align-items: center;
+}
+.text
+{
+    font-size: 10pt;
+    color:rgb(142, 142, 142)
+}
+.avatar
+{
+    margin: 10px;
+    border: solid 1px green;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+}
+.nom
+{
+    width:85%;
+}
+.icon
+{
+    float: right;
+}
+.date_star
+{
+    padding-left:35px;
+    font-size: 10pt;
+    color: rgb(90, 89, 89);
+}
+.text
+{
+   padding: 20px; 
+}
+/* .glyphicon
+{
+    float: right;
+} */
+
+.postdescri
+{
+   
+  
+    font-size: 16pt;
+    padding-left: 30px;
+    margin: auto;
+}
+.glyphicon
+{
+    display: block;
+}
+
+.area
+{
+    margin: auto;
+    margin-bottom: 10px;
+    width:100%;
+}
+.coms-btn{
+    display:flex;
+}
+
+
+@media screen and (max-width:420px) {
+    .heading
+    {
+        display:flex;
+        width: 90%;
+    }
+    .postdescri
+    {
+        width: 90%;
+        font-size: 13pt;
+        padding-left: 30px;
+    
+    }
+    .area
+    {
+     
+        margin-bottom: 10px;
+        width:90%;
+    }
+    
+}
+@media screen and (min-width:420px) and (max-width:1080) {
+    .heading
+    {
+        display:flex;
+        width: 90%;
+    }
+    .postdescri
+    {
+        width: 90%;
+        font-size: 13pt;
+        padding-left: 30px;
+    
+    }
+.area
+    {
+        margin: auto;
+        margin-bottom: 10px;
+       
+    
+    
+}
