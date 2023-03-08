@@ -74,6 +74,7 @@ const AdvancedSearch = React.lazy(() => import('./views/pages/auctions/advancedS
 const AuctionListDesc = React.lazy(() => import('./views/pages/auctions/List/AuctionListDesc'))
 const AuctionMised = React.lazy(() => import('./views/pages/auctions/List/AuctionMised'))
 const Encherir = React.lazy(() => import('./views/pages/auctions/Encherir/Encherir'))
+const Publication = React.lazy(() => import('./views/pages/publication/publication'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -94,6 +95,7 @@ const routes = [
   { path: '/accueil', name: 'AuctionListDesc', element: AuctionListDesc },
   { path: '/mised', name: 'AuctionMised', element: AuctionMised },
   { path: '/encherir/:id', name: 'Encherir', element: Encherir },
+  { path: '/publication', name: 'Publication', element: Publication },
 ]
 
 export default routes
