@@ -1,6 +1,6 @@
 .main
 {
-    background-color: blue;
+    background-color: #e9f1ff;
 }
 .commentbox
 {
@@ -42,20 +42,24 @@ margin: 10px;
 .text
 {
     font-size: 10pt;
-    color:rgb(142, 142, 142)
+    color:rgb(69, 68, 68)
+    margin-left:20px;
 }
 .avatar
 {
     margin: 10px;
+    margin-left: 30px;
     border: solid 1px green;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     
 }
 .nom
 {
     width:85%;
+    font-size: 12pt;
+    font-weight: bold;
 }
 .icon
 {
@@ -65,7 +69,7 @@ margin: 10px;
 {
     padding-left:35px;
     font-size: 10pt;
-    color: rgb(90, 89, 89);
+    color: rgb(175, 175, 175);
 }
 .text
 {
@@ -97,8 +101,25 @@ margin: 10px;
 }
 .coms-btn{
     display:flex;
+    color: #a6a6a6;
 }
-
+.btn
+{
+    background-color:#04249b;
+    color: white;
+}
+.btn :hover
+{
+    color: white;
+}
+.glyphicon-star
+{
+    color: #2c448c;
+}
+.glyphicon-star-empty
+{
+    color: #2c448c;
+}
 
 @media screen and (max-width:420px) {
     .heading
