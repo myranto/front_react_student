@@ -1,0 +1,44 @@
+1. Statistiques de ventes
+data: {
+  dailySales: [
+    { date: Date, amount: number }
+    ...
+  ],
+  totalSales: number
+  commissionAverage: number
+}
+
+2. Statistiques des encheres
+data: {
+  dailyAyctionsFinished: [
+    { date: Date, amount: number }
+    ...
+  ],
+  dailyAyctionsStarted: [
+    { date: Date, amount: number }
+    ...
+  ],
+  totalAuctionsFinished: number,
+  leastValuableAuction: number,
+  mostValuableAuction: number,
+}
+
+3. Recuperation des demandes de recharges
+data: {
+  reloads: [
+    {
+       id: number,
+       user: {
+        id: number,
+        username: string,
+       },
+       amount: number,
+       date: Date,
+       state: {
+          id: number,
+          name: string,
+       }
+    }
+    ...
+  ]
+}

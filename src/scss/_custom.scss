@@ -1,0 +1,15 @@
+// Here you can add other styles
+// Buttons
+.btn, .btn-group {
+  margin: .25rem .125rem;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.breadcrumb-link {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
