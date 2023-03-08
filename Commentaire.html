@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="fonts/glyphicons-halflings-regular.ttf">
     <title>Comment</title>
 </head>
+
 <body class="main">
 
         <div id="container">
@@ -40,11 +41,15 @@
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus vitae harum officia aperiam aut, accusantium hic, praesentium fuga molestias, quidem eligendi veritatis sed adipisci atque voluptas saepe esse perspiciatis expedita.
                             </div>
                         </div>
+                        <div><button class="btn"  onclick="clickcomment()">voire commentaire</button></div>
                     </div>
                     <div class="col-lg-3"></div>
                 </div>
             </div>
-            <div class="commentbox">
+            <div id="comment">
+
+            </div>
+            <!-- <div class="commentbox">
                 <div class="row">
                     <div class="col-lg-3"></div>
 
@@ -116,6 +121,74 @@
                     <div class="col-lg-3"></div>
                 </div>
             </div>
+            <div class="commentbox">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="content col-lg-6">
+                        <div class="row">
+                            <div class="heading">
+                                <div class="img"><img class="avatar" src="" alt=""></div>
+                                <div class="nom">Randria</div>
+                                <div class="icon"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></div>
+                            </div>
+                        </div>
+                   
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="date_star">2 days ago
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Tempora quae natus quod qui accusantium aliquid expedita iusto assumenda fugiat repudiandae,
+                                ipsum voluptatum provident nisi illo id laboriosam minus blanditiis eveniet.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+            <div class="commentbox">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="content col-lg-6">
+                        <div class="row">
+                            <div class="heading">
+                                <div class="img"><img class="avatar" src="" alt=""></div>
+                                <div class="nom">Randria</div>
+                                <div class="icon"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></div>
+                            </div>
+                        </div>
+                   
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="date_star">2 days ago
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Tempora quae natus quod qui accusantium aliquid expedita iusto assumenda fugiat repudiandae,
+                                ipsum voluptatum provident nisi illo id laboriosam minus blanditiis eveniet.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
             <div class="commenter">
                 <div class="row">
                     <div class="col-lg-3"></div>
@@ -132,10 +205,39 @@
                     </div>
                     <div class="col-lg-3"></div>
                 </div>
-            </div>
+            </div> -->
            
            
         </div>
-        <!-- end container -->
+       
+        <script>
+            const text="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Tempora quae natus quod qui accusantium aliquid expedita iusto assumenda fugiat repudiandae,ipsum voluptatum provident nisi illo id laboriosam minus blanditiis eveniet."
+            const list = [{nom:"rakoto",date:"02 Janvier 2023",texte:text},{nom:"rakoto",date:" 23 Decembre 2023",texte:text}]
+           
+            function generateCommentaire(listCom){
+               var i = 0 ;
+               console.log(listCom)
+               var doc = document.getElementById("comment");
+               doc.innerHTML = "";
+               var theme = "";
+               console.log(listCom[0].nom)
+               for(i = 0 ; i < listCom.length ; i ++)
+               {
+                   theme = "<div class='commentbox'><div class='row'><div class='col-lg-3'></div><div class='content col-lg-6'><div class='row'><div class='heading'><div class='img'><img class='avatar' src='' alt=''></div><div class='nom'>";
+                   theme = theme + listCom[i].nom;
+                   theme = theme + "</div><div class='icon'><span class='glyphicon glyphicon-option-vertical' aria-hidden='true'></span></div></div></div><div class='row'><div class='col-lg-6'><div class='date_star'>"
+                   theme = theme + listCom[i].date;
+                   theme = theme + "<span class='glyphicon glyphicon-star' aria-hidden='true'></span><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></div></div></div><div class='row'><div class='text'>"
+                   theme = theme + listCom[i].texte;
+                   theme = theme + "</div></div></div><div class='col-lg-3'></div></div></div>";
+                   doc.innerHTML = doc.innerHTML + theme;
+               }  
+           }
+           generateCommentaire([list[list.length-1]])
+           function clickcomment()
+            {
+               generateCommentaire(list);
+           }
+       </script> <!-- end container -->
 </body>
 </html>
