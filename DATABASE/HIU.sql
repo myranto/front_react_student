@@ -73,6 +73,16 @@ CREATE TABLE Tache
     PRIMARY KEY (idTache)
 );
 
+
+INSERT INTO Tache (idEtudiant, DatePlanning, Durree, TitreTache, DescriptionTache, priorite, rappel, etat,
+                   ProjetidProjet)
+
+insert into Tache values(default,4,'2022-03-10 14:30:00',2,'metier',' fonction formulaire de login',4,'2022-03-10 15:30:00','en cours',2);
+insert into Tache values(default,2,'2022-03-10 15:00:00',1,'vue','maquette,css acceuil',2,'2022-03-10 15:30:00','en cours',2);
+insert into Tache values(default,1,'2022-03-10 16:30:00',1,'metier','Fonction recherche avancee',3,'2022-03-10 17:30:00','fini',2);
+insert into Tache values(default,2,'2022-03-11 14:30:00',3,'vue','java script modal commentaire',4,'2022-03-11 16:00:00','fini',3);
+insert into Tache values(default,5,'2022-03-11 15:26:00',1,'metier',' fonction  getcategorieproduits',2,'2022-03-11 16:15:00','en cours',3);
+
 CREATE TABLE Projet
 (
     idProjet           SERIAL       NOT NULL,
@@ -84,6 +94,11 @@ CREATE TABLE Projet
     PRIMARY KEY (idProjet)
 );
 
+insert into Projet values(default,3,'Taxi java','2022-06-10 14:30:00','jeu de parking taxi','2022-06-17 17:00:00');
+insert into Projet values(default,4,'Takalo Takalo','2022-07-12 08:30:00','echange commercial,des biens et des services sur un site web','2022-07-14 18:00:00');
+insert into Projet values(default,1,'Jeu de tir','2022-07-20 8:00:00','Mini jeu sur Python,un je qui tire sur des fruits en mouvements','2022-07-28 12:00:00');
+insert into Projet values(default,5,'Projet lalana','2022-08-02 14:30:00','SIG,reparation de route et marquage des points noirs','2022-08-09 14:00:00');
+insert into Projet values(default,2,'Projet Pharmacie','2022-09-11 08:30:00','Projet web 32h ,un site web de gestion de stocks pharmacie','2022-13-10 17:00:00');
 CREATE TABLE SousTache
 (
     idSousTache     serial        NOT NULL,
@@ -97,6 +112,11 @@ CREATE TABLE SousTache
     PlanningidTache int           NOT NULL,
     PRIMARY KEY (idSousTache)
 );
+insert into SousTache values(default,'verification',' fonction verification login','2022-03-10 14:30:00',2,1,1,1,1);
+insert into SousTache values(default,'Recherches bibliographiques',' Recherche de publications sur le sujet du projet','2022-03-13 15:30:00',4,2,3,2,1);
+insert into SousTache values(default,'Recherche Images',' Images pour le projet web','2022-03-15 10:13:00',1,1,4,1,1);
+insert into SousTache values(default,'Conception de maquette',' conception de maquette pour le projet web','2022-03-15 14:00:00',3,2,2,1,2);
+insert into SousTache values(default,'Mathematiques','calcul mathematiques','2022-03-16 9:10:00',1,1,2,1,4);
 
 CREATE TABLE Pomodoro
 (
@@ -106,7 +126,11 @@ CREATE TABLE Pomodoro
     Pause      int       NOT NULL,
     PRIMARY KEY (idPomodoro)
 );
-
+insert into Pomodoro values(default,'2022-03-13 15:30:00',25,10);
+insert into Pomodoro values(default,'2022-03-15 10:30:00',30,5);
+insert into Pomodoro values(default,'2022-03-16 9:00:00',40,15);
+insert into Pomodoro values(default,'2022-03-16 10:15:00',20,5);
+insert into Pomodoro values(default,'2022-03-13 9:00:00',25,10);
 -- CREATE TABLE Etudiant_Pomodoro (
 --     EtudiantidEtudiant   int NOT NULL  references Etudiant(idEtudiant),
 --     PomodoroidPomodoro   int NOT NULL  references Pomodoro(idPomodoro),
@@ -123,7 +147,11 @@ CREATE TABLE Etudiant_Pomodoro
                  PomodoroidPomodoro)
 );
 
-
+insert into Etudiant_Pomodoro values(2,2,'2022-03-13 9:00:00',1,'2022-03-13 16:00:00');
+insert into Etudiant_Pomodoro values(1,3,'2022-04-15 10:30:00',4,'2022-04-15 14:00:00');
+insert into Etudiant_Pomodoro values(1,2,'2022-04-16 9:00:00',2,'2022-04-16 11:00:00');
+insert into Etudiant_Pomodoro values(2,2,'2022-04-20 8:00:00',3,'2022-04-20 14:00:00');
+insert into Etudiant_Pomodoro values(2,2,'2022-04-22 10:00:00',2,'2022-04-23 14:00:00');
 CREATE TABLE Publication
 (
     idPublication      SERIAL       NOT NULL,
@@ -132,7 +160,11 @@ CREATE TABLE Publication
     EtudiantidEtudiant int          NOT NULL,
     PRIMARY KEY (idPublication)
 );
-
+insert into Publication values(default,'Bonjour daholo ianareo!ahoana kay ny manao fonction amn python?','2022-03-13 19:00:00',1);
+insert into Publication values(default,'Mba misy afaka manazava ilay devoir ve?','2022-04-12 15:30:00',2);
+insert into Publication values(default,'Amin firy no faran,ilay inscription ry zareo?','2022-04-14 19:00:00',4);
+insert into Publication values(default,'Bonjour!Mba omeo lien afaka hijerena tuto ry zareo.Merci!','2022-05-15 20:00:00',3);
+insert into Publication values(default,'Raccourcis plume photoshop?','2022-03-13 17:00:00',3);
 
 CREATE TABLE Commentaire
 (
@@ -145,6 +177,12 @@ CREATE TABLE Commentaire
     PRIMARY KEY (idCommentaire)
 );
 
+insert into Commentaire values(default,1,'Jereo amin chatgpt rapide e!','2022-03-13 19:00:01',2);
+insert into Commentaire values(default,1,'Misy fichier nalefako any amn email any!','2022-04-12 15:35:00',3);
+insert into Commentaire values(default,1,'merci!','2022-04-12 15:36:00',2);
+insert into Commentaire values(default,1,'De rien!','2022-04-12 15:40:00',3);
+insert into Commentaire values(default,5,'P no raccourcis','2022-03-13 18:00:00',4);
+
 create table note_coms
 (
     idCommentaire int not null references Commentaire (idCommentaire),
@@ -152,6 +190,7 @@ create table note_coms
     idEtudiant    int not null references Etudiant (idEtudiant),
     primary key (idEtudiant, idCommentaire)
 );
+
 
 CREATE TABLE FichierPartager
 (
