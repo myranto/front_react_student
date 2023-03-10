@@ -1,7 +1,7 @@
 #main_probleme
 {
     background-color: #E5EFF2;
-    font-family:"Source Sans Pro";
+    font-family:"Helvetica";
 }
 .container
 {
@@ -32,6 +32,7 @@ svg
     color: #206DF7;
     font-size: 24pt;
     font-weight: bold;
+   
     margin-bottom:-15px;
 }
 .btn
@@ -48,4 +49,8 @@ svg
 .btn:hover
 {
     background-color: #206DF7;
+}
+.subtitle
+{
+    color:rgb(200, 194, 194);
 }
