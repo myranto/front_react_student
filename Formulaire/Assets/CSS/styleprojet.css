@@ -1,0 +1,97 @@
+#main_projet
+{
+    background-color: #E5EFF2;
+    font-family:"Source Sans Pro";
+}
+.container
+{
+    background-color: white;
+    width: 400px;
+    height:450px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.04);
+}
+input{
+    width:300px;
+    height: 25px;
+    margin:15px;
+    border-radius: 3px;
+    border: none;
+    border-bottom: solid 0.5px grey;
+}
+svg
+{
+    width:25px;
+    height: 25px;
+    color: #206DF7;
+}
+.projettitre
+{ align-self: center;
+    color: #206DF7;
+    font-size: 24pt;
+    font-weight: bold;
+    
+    margin-bottom:-15px;
+}
+
+.Descr
+{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin-left: 40px;
+    width:300px;
+    margin-left: -30px;
+
+    
+}
+.desc
+{
+    
+    width:300px;
+    margin-left: 40px;
+    
+    
+}
+.debut
+{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin-left: 30px;
+
+    
+}
+.fini
+{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin-left: 30px;
+
+    
+}
+.titre
+{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin-left: 30px;
+    
+}
+.btn
+{
+    align-self: center;
+    width:150px;
+    height:40px;
+    margin: 10px;
+    background-color: #323461;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+.btn:hover
+{
+    background-color: #206DF7;
+}
