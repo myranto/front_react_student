@@ -118,3 +118,110 @@ svg
     float: left;
 
 }
+
+@media screen and (max-width:412px) {
+
+    .container 
+    {
+        width: 90%;
+    }
+    .image
+    {
+        width:0%;
+    }
+   
+    .inscribox
+    {
+        width: 90%;
+        display: flex;
+    }
+
+    .Nom
+    {
+        width:95%;
+        height: 30px;
+        align-self: center;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+    .Prenom
+    {
+        width:95%;
+        height: 30px;
+        align-self: center;
+        margin-bottom: 10px;
+        margin-left: 25px;
+
+
+    }
+    .Date
+    {
+        width:95%;
+        height: 30px;
+        align-self: center;
+        margin-bottom: 10px;
+        margin-left: 25px;
+
+
+    } 
+    .mail{
+        width:95%;
+        height: 30px;
+        align-self: center;
+        margin-bottom: 10px;
+        margin-left: 25px;
+
+
+    }  
+    .mdp
+    {
+        width:95%;
+        height: 30px;
+        align-self: center;
+        margin-bottom: 10px;
+        margin-left: 25px;
+
+    }
+.input{
+    width:300px;
+    height: 25px;
+    margin:15px;
+    border-radius: 3px;
+    border: none;
+    border-bottom: solid 0.5px grey;
+}
+
+.btn
+{
+    align-self: center;
+    width:150px;
+    height:40px;
+    margin: 10px;
+    background-color: #323461;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+.btn:hover
+{
+    background-color: #206DF7;
+}
+.titre
+{
+    color: #206DF7;
+    font-size: 24pt;
+    font-weight: bold;
+    align-self: center;
+    margin-bottom: 10px;
+    
+}
+.inscri
+{
+ 
+    margin-left: 20px;
+    color: rgb(77, 77, 77);
+    font-size: 10pt;
+}
+
+   
+}
