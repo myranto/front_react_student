@@ -12,14 +12,22 @@ const formatTime = (timeLeftInSecond) => {
 }
 
 export default class Times extends Component {
+ 
   render() {
     return (
+      
+      <div>
+        { this.props.value === "notHeader" ? (
       <div className="times">
         <div className="times-content">
           <label id="timer-label">{this.props.timeLabel}</label>
           <span id="time-left">{formatTime(this.props.timeLeftInSecond)}</span>
         </div>
       </div>
+      ):(
+        <span>{formatTime(this.props.timeLeftInSecond)}</span>
+      )}
+      </div> 
     )
   }
 }

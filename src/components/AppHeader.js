@@ -17,38 +17,81 @@ import { cilBell, cilEnvelopeOpen, cilList, cilMenu } from '@coreui/icons'
 import { AppBreadcrumb } from './index'
 import { AppHeaderDropdown } from './header/index'
 import { logo } from 'assets/brand/logo'
+import PomodoroConfig from 'views/pages/pomodoro/pomodoro_components/PomodoroConfig'
 
+let pomodoroHeader = true
+let sessionLength = 25;
+export const setPomodoroHeader = (newState) =>{
+  pomodoroHeader = newState
+}
+
+export const getPomodoroHeader = (newState) =>{
+  return pomodoroHeader 
+}
+export const setSessionLength = (newState) =>{
+  sessionLength = newState
+}
+
+export const getSessionLength = (newState) =>{
+  return sessionLength 
+}
+localStorage.setItem('time', 25)
 const AppHeader = () => {
   const dispatch = useDispatch()
-  const sidebarShow = useSelector((state) => state.sidebarShow)
+  //const sidebarShow = useSelector((state) => state.sidebarShow)
   const navigate = useNavigate()
+
+ if(localStorage.getItem('time')!=25){
+  setSessionLength(localStorage.getItem('time'))
+ }
   return (
-    <CHeader position="sticky" className="mb-4">
+    <CHeader position="sticky" className="mb-4"> 
       <CContainer fluid>
-        <CHeaderToggler
-          className="ps-1"
-          onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
-        >
-          <CIcon icon={cilMenu} size="lg" />
-        </CHeaderToggler>
         <CHeaderBrand className="mx-auto d-md-none" to="/">
           <CIcon icon={logo} height={48} alt="Logo" />
         </CHeaderBrand>
         <CHeaderNav className="d-none d-md-flex me-auto">
           <CNavItem>
-            <CNavLink onClick={() => navigate('/accueil')}>Accueil</CNavLink>
+            <CNavLink onClick={() => navigate('/accueil')}>Community</CNavLink>
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav className="d-none d-md-flex me-auto">
           <CNavItem>
-            <CNavLink onClick={() => navigate('/advancedSearch')}>Recherche avancée</CNavLink>
+            <CNavLink onClick={() => navigate('/login')}>Login</CNavLink>
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav className="d-none d-md-flex me-auto">
           <CNavItem>
-            <CNavLink onClick={() => navigate('/mised')}>Enchere ou vous avez misé</CNavLink>
+            <CNavLink onClick={() => navigate('/register')}>Sign up</CNavLink>
           </CNavItem>
         </CHeaderNav>
+        <CHeaderNav className="d-none d-md-flex me-auto">
+          <CNavItem>
+            <CNavLink onClick={() => navigate('#')}>My projects</CNavLink>
+          </CNavItem>
+          </CHeaderNav>
+          <CHeaderNav className="d-none d-md-flex me-auto">
+          <CNavItem>
+            <CNavLink onClick={() => navigate('/advancedSearch')}>My files</CNavLink>
+          </CNavItem>
+          </CHeaderNav>
+          <CHeaderNav className="d-none d-md-flex me-auto">
+          <CNavItem>
+            <CNavLink onClick={() => navigate('/advancedSearch')}>My notes</CNavLink>
+          </CNavItem>
+          </CHeaderNav>
+          <CHeaderNav className="d-none d-md-flex me-auto">
+          <CNavItem>
+            <CNavLink onClick={() => navigate('/advancedSearch')}>Notifications</CNavLink>
+          </CNavItem>
+          </CHeaderNav>
+          {pomodoroHeader &&(
+          <CHeaderNav className="d-none d-md-flex me-auto">
+            <PomodoroConfig
+      defaultBreakLength='5'
+      defaultSessionLength={sessionLength}
+      value="" />
+          </CHeaderNav>)}
         <CHeaderNav className="ms-3">
           <AppHeaderDropdown />
         </CHeaderNav>

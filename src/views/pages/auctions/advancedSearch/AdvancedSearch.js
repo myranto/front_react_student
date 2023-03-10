@@ -2,12 +2,13 @@ import { CardMedia, TextField, Select, MenuItem, InputLabel, FormControl, Slider
 import * as React from 'react';
 import { getCategories, getAppUser, getAuctionState, advancedSearch } from '../../../../database/Api';
 import '../../../../css/gallery.css';
-
+import { setPomodoroHeader } from 'components/AppHeader';
 const minDistance = 100000;
 const prixMin = 0;
 const prixMax = 90000000;
 
 const AdvancedSearch = () => {
+ 
   const [prix, setprix] = React.useState([prixMin, prixMax]);
   const [categories, setCategories] = React.useState([]);
   const [allCategories, setallCategories] = React.useState([])

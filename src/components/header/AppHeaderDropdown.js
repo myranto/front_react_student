@@ -15,7 +15,7 @@ const AppHeaderDropdown = () => {
     const swal = withReactContent(Swal)
     logout()
       .then((data) => {
-        localStorage.removeItem('admin-token')
+        //localStorage.removeItem('admin-token')
         const swalData = {
           icon: 'success',
           title: 'Vous avez été déconnecté',

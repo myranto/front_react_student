@@ -4,17 +4,23 @@ import Times from './Times';
 import Controller from './Controller';
 import '../../../../css/App.css';
 
+
+
+
 export default class PomodoroConfig extends Component {
+  static time = null;
+  static sessionLength = 0;
+
   constructor(props) {
     super(props);
-
+     this.value = {title:this.props.value};
     this.audioBeep = React.createRef();
-
+    PomodoroConfig.sessionLength = this.props.defaultSessionLength
     this.state = {
       breakLength: Number.parseInt(this.props.defaultBreakLength, 10),
-      sessionLength: Number.parseInt(this.props.defaultSessionLength, 10),
+      sessionLength: Number.parseInt( this.props.defaultSessionLength, 10),
       timeLabel: 'Session',
-      timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 10) * 60,
+      timeLeftInSecond: Number.parseInt(  this.props.defaultSessionLength , 10) * 60,
       isStart: false,
       timerInterval: null
     }
@@ -27,7 +33,12 @@ export default class PomodoroConfig extends Component {
     this.onStartStop = this.onStartStop.bind(this);
     this.decreaseTimer = this.decreaseTimer.bind(this);
     this.phaseControl = this.phaseControl.bind(this);
+
+
   }
+
+  
+ 
 
   onIncreaseBreak() {
     if (this.state.breakLength < 60 && !this.state.isStart) {
@@ -79,6 +90,7 @@ export default class PomodoroConfig extends Component {
   }
 
   onStartStop() {
+  
     if (!this.state.isStart) {
       this.setState({
         isStart: !this.state.isStart,
@@ -122,9 +134,18 @@ export default class PomodoroConfig extends Component {
       }
     }
   }
+  componentDidUpdate(prevProps,prevState) {
+    if(this.state.sessionLength!=prevState.sessionLength){
+      localStorage.setItem('time',this.state.sessionLength)
+      alert( this.state.sessionLength)
+    }
+   
+  }
 
   render() {
     return (
+      <div>
+      { this.value.title === "notHeader" ? (
       <div className="pomodoro-clock">
         <div className="pomodoro-clock-header">
           <h1 className="pomodoro-clock-header-name">pomodoro</h1>
@@ -143,18 +164,29 @@ export default class PomodoroConfig extends Component {
         <Times
           timeLabel={this.state.timeLabel}
           timeLeftInSecond={this.state.timeLeftInSecond}
+          value="notHeader"
         />
 
         <Controller
           onReset={this.onReset}
           onStartStop={this.onStartStop}
           isStart={this.state.isStart}
+          value="notHeader"
         />
 
-        <audio id="beep" preload="auto" src="https://goo.gl/65cBl1" ref={this.audioBeep}></audio>
+        <audio id="beep" preload="auto" ref={this.audioBeep}></audio>
        
 
    
+      </div>):(
+         <><> <table><tr><td><Controller
+         onStartStop={this.onStartStop}
+         isStart={this.state.isStart}
+         value="" /></td>
+             <td> <Times
+              timeLabel={this.state.timeLabel}
+              timeLeftInSecond={this.state.timeLeftInSecond} /></td></tr></table></><audio id="beep" preload="auto" ref={this.audioBeep}></audio></>
+      )}
       </div>
     );
   }
