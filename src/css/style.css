@@ -1,0 +1,36 @@
+.liste
+{
+    border:1px solid red;
+    width: 350px;
+}
+
+li
+{
+ list-style-type: none;
+}
+
+.checker
+{
+    float: right;
+}
+.date
+{
+    float:right;
+}
+/* .panel-footer
+{
+    display:flex;
+}
+.descri
+{
+    float: left;
+} */
+
+.panel
+{
+    width:350px;
+}
+#listpan
+{
+    margin: auto;
+}

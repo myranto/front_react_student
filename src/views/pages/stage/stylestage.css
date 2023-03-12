@@ -1,0 +1,57 @@
+#main_stage
+{
+    background-color: #E5EFF2;
+    font-family:"Arial";
+}
+.container
+{
+    background-color: white;
+    width: 400px;
+    height:450px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.04);
+    padding-top: 10px;
+}
+input{
+    width:300px;
+    height: 25px;
+    margin:15px;
+    border-radius: 3px;
+    border: none;
+    border-bottom: solid 0.5px grey;
+    
+}
+svg
+{
+    width:25px;
+    height: 25px;
+    color: #206DF7;
+}
+.problemetitre
+{ align-self: center;
+    color: #206DF7;
+    font-size: 24pt;
+    font-weight: bold;
+   
+    margin-bottom:-15px;
+}
+.btn
+{
+    align-self: center;
+    width:150px;
+    height:40px;
+    margin: 10px;
+    background-color: #323461;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+.btn:hover
+{
+    background-color: #206DF7;
+}
+.subtitle
+{
+    color:rgb(200, 194, 194);
+}
